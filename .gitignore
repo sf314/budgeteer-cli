@@ -1,0 +1,10 @@
+
+# Host files
+**/.DS_Store
+
+# Editor files
+.vscode/
+
+# Executables
+**/budgeteer-cli
+
