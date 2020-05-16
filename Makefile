@@ -1,10 +1,23 @@
 
+CC = gcc
+
+FLAGS = \
+-Wall \
+-Werror
+
+INCLUDES = \
+
+
+SOURCES = \
+main.c
+
+OUTPUT = budgeteer-cli
 
 all:
-	gcc main.c -o budgeteer-cli
+	$(CC) $(FLAGS) $(INCLUDES) $(SOURCES) -o $(OUTPUT)
 
 clean:
-	rm budgeteer-cli
+	rm $(OUTPUT)
 
 run:
-	./budgeteer-cli
+	./$(OUTPUT)
