@@ -1,8 +1,13 @@
+/**
+ * Budgeteer CLI Main file
+ * Stephen Flores
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
+#include <structures.h>
 
 #define INPUT_LEN 100
 
