@@ -6,7 +6,7 @@ FLAGS = \
 -Werror
 
 INCLUDES = \
-
+-Istructs
 
 SOURCES = \
 main.c
