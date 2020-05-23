@@ -9,12 +9,14 @@ INCLUDES = \
 -Istructs
 
 SOURCES = \
-main.c
+main.c \
+structs/struct_utils.c
 
 OUTPUT = budgeteer-cli
 
 TEST_SOURCES = \
-test.c
+test.c \
+structs/struct_utils.c
 
 TEST_OUTPUT = budgeteer-tests
 
