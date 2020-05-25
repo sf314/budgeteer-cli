@@ -44,7 +44,7 @@ void add_transaction(transaction_node_t** head, transaction_t new_transaction);
  * @param head The head of list to modify.
  * @param index The index of the item to remove. If it exceeds the list size, then nothing occurs.
  */
-void remove_transaction_at_index(transaction_node_t* head, int index);
+void remove_transaction_at_index(transaction_node_t** head, int target);
 
 /**
  * Print all transactions for a list

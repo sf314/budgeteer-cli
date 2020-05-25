@@ -21,14 +21,16 @@ int test_datastructures(void);
 int test_time(void);
 int test_add_transaction(void);
 int test_print_transaction(void);
+int test_remove_transaction(void);
 
 int main() {
-    int total_tests = 4;
+    int total_tests = 0;
     int num_passed = 0;
-    num_passed += test_time();
-    num_passed += test_datastructures();
-    num_passed += test_add_transaction();
-    num_passed += test_print_transaction();
+    total_tests++; num_passed += test_time();
+    total_tests++; num_passed += test_datastructures();
+    total_tests++; num_passed += test_add_transaction();
+    total_tests++; num_passed += test_print_transaction();
+    total_tests++; num_passed += test_remove_transaction();
 
     printf("Tests passed: %d of %d\n", num_passed, total_tests);
 
@@ -103,6 +105,43 @@ int test_print_transaction() {
     add_transaction(&head, t2);
 
     // Run test
+    print_transactions(&head);
+
+    return TEST_PASS;
+}
+
+int test_remove_transaction() {
+    // Create sample transactions
+    transaction_node_t* head = NULL;
+    transaction_t t1 = create_transaction("First!", 1.23);
+    transaction_t t2 = create_transaction("Second!", 2.34);
+    transaction_t t3 = create_transaction("Third!", 3.45);
+    transaction_t t4 = create_transaction("Fourth!", 4.56);
+
+    add_transaction(&head, t1);
+    add_transaction(&head, t2);
+    add_transaction(&head, t3);
+    add_transaction(&head, t4);
+
+    printf("Before removal:\n");
+    print_transactions(&head);
+
+    // Run test
+    printf("Remove at index 2:\n");
+    remove_transaction_at_index(&head, 2);
+    print_transactions(&head);
+
+    printf("Remove at index 2:\n");
+    remove_transaction_at_index(&head, 2);
+    print_transactions(&head);
+
+    printf("Remove at index 0:\n");
+    remove_transaction_at_index(&head, 0);
+    print_transactions(&head);
+
+
+    printf("Remove at index 2:\n");
+    remove_transaction_at_index(&head, 2);
     print_transactions(&head);
 
     return TEST_PASS;
