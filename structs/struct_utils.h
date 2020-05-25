@@ -23,20 +23,20 @@ transaction_t create_transaction(const char* desc, float amount);
  * @param head The head of list to modify.
  * @param new_transaction The new item to add to the list.
  */
-void add_transaction(transaction_node_t** head, transaction_t new_transaction);
+void add_transaction(transaction_node_t** head_ref, transaction_t new_transaction);
 
 /**
  * Remove transaction from a list at a given index
  * @param head The head of list to modify.
  * @param index The index of the item to remove. If it exceeds the list size, then nothing occurs.
  */
-void remove_transaction_at_index(transaction_node_t** head, int target);
+void remove_transaction_at_index(transaction_node_t** head_ref, int target);
 
 /**
  * Print all transactions for a list
  * @param head The head of list to print.
  */
-void print_transactions(transaction_node_t** head);
+void print_transactions(transaction_node_t** head_ref);
 
 
 
