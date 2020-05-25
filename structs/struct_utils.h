@@ -38,6 +38,13 @@ void remove_transaction_at_index(transaction_node_t** head_ref, int target);
  */
 void print_transactions(transaction_node_t** head_ref);
 
+/**
+ * Find the length of a particular list
+ * @param head The head of the list to analyze.
+ * @return The size of the list.
+ */
+int length(transaction_node_t** head_ref);
+
 
 
 #endif

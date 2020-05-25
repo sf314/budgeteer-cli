@@ -91,3 +91,15 @@ void print_transactions(transaction_node_t** head_ref) {
     } while (temp != NULL);
 
 }
+
+int length(transaction_node_t** head_ref) {
+
+    transaction_node_t* temp = *head_ref;
+    int length = 0;
+    while (temp != NULL) {
+        temp = temp->next;
+        length++;
+    }
+
+    return length;
+}

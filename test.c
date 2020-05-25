@@ -122,27 +122,23 @@ int test_remove_transaction() {
     add_transaction(&head, t2);
     add_transaction(&head, t3);
     add_transaction(&head, t4);
+    if (length(&head) != 4) { return TEST_FAIL; }
 
-    printf("Before removal:\n");
-    print_transactions(&head);
-
-    // Run test
-    printf("Remove at index 2:\n");
+    // Run test: Remove at middle of list
     remove_transaction_at_index(&head, 2);
-    print_transactions(&head);
+    if (length(&head) != 3) { return TEST_FAIL; }
 
-    printf("Remove at index 2:\n");
+    // Remove at end of list
     remove_transaction_at_index(&head, 2);
-    print_transactions(&head);
+    if (length(&head) != 2) { return TEST_FAIL; }
 
-    printf("Remove at index 0:\n");
+    // Remove at beginning of list
     remove_transaction_at_index(&head, 0);
-    print_transactions(&head);
+    if (length(&head) != 1) { return TEST_FAIL; }
 
-
-    printf("Remove at index 2:\n");
+    // Attempt to remove at nonexistant index (length will not change)
     remove_transaction_at_index(&head, 2);
-    print_transactions(&head);
+    if (length(&head) != 1) { return TEST_FAIL; }
 
     return TEST_PASS;
 }
