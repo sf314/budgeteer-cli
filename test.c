@@ -10,7 +10,7 @@
 #include <string.h>
 #include <math.h>
 
-#include <structures.h> 
+#include <structures.h>
 #include <struct_utils.h>
 
 #define TEST_PASS 1
@@ -27,14 +27,14 @@ int main() {
     num_passed += test_time();
     num_passed += test_datastructures();
     num_passed += test_add_transaction();
-    
+
     printf("Tests passed: %d of %d\n", num_passed, total_tests);
-    
+
     if (num_passed != total_tests) {
         printf("WARNING: %d tests failed.\n", total_tests - num_passed);
         return 1;
     }
-    
+
     return 0;
 }
 
@@ -71,7 +71,7 @@ int test_add_transaction() {
     transaction_node_t* head = NULL;
 
     transaction_t new_trans = create_transaction("Hello, there", 1.23);
-    
+
     if (fabs(new_trans.amount - 1.23) > 0.0000001) {
         printf("New transaction is not 1.23, but rather %f\n", new_trans.amount);
         return TEST_FAIL;

@@ -14,11 +14,11 @@
 
 int main() {
     printf("Starting Budgeteer CLI...\n");
-    
+
     // Declare global input param
     char* input = malloc(INPUT_LEN);
     memset(input, 0, INPUT_LEN);
-    
+
     int should_continue = 1;
     while (should_continue) {
         // Print menu
@@ -26,19 +26,19 @@ int main() {
         printf("1. Say hello\n");
         printf("2. Say goodbye\n");
         printf("0. Quit\n");
-        
+
         // Fetch numerical input
         printf("> ");
         scanf("%s", input);
         int selection = atoi(input);
         printf("Selected: %d\n", selection);
-        
+
         // Switch on results
         switch (selection) {
         case 1:
             printf("Hello!\n");
             break;
-        case 2: 
+        case 2:
             printf("Goodbye!\n");
             break;
         case 0:
@@ -50,7 +50,7 @@ int main() {
             break;
         }
     }
-    
-    
+
+
     return 0;
 }

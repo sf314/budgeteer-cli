@@ -11,7 +11,7 @@ typedef struct __attribute__((packed)) {
     uint64_t timestamp;
     double amount;
     char description[DESCRIPTION_LEN];
-} transaction_t; 
+} transaction_t;
 
 typedef struct __attribute__((packed)) {
     double limit;
