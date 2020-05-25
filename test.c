@@ -8,6 +8,7 @@
 
 #include <time.h>
 #include <string.h>
+#include <math.h>
 
 #include <structures.h> 
 #include <struct_utils.h>
@@ -68,16 +69,18 @@ int test_time() {
 
 int test_add_transaction() {
     transaction_node_t* head = NULL;
+
+    transaction_t new_trans = create_transaction("Hello, there", 1.23);
     
-    transaction_t new_trans;
-    memset(&new_trans, 0, sizeof(new_trans));
-    strcpy(new_trans.description, "Hello, there!");
-    new_trans.amount = 12.34;
-    
+    if (fabs(new_trans.amount - 1.23) > 0.0000001) {
+        printf("New transaction is not 1.23, but rather %f\n", new_trans.amount);
+        return TEST_FAIL;
+    }
+
     add_transaction(&head, new_trans);
     add_transaction(&head, new_trans);
-    
+
     print_transactions(&head);
-    
+
     return TEST_PASS;
 }

@@ -1,8 +1,20 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include <struct_utils.h>
+
+transaction_t create_transaction(const char* desc, float amount) {
+    transaction_t new_trans;
+
+    memset(&new_trans, 0, sizeof(new_trans));
+
+    strcpy(new_trans.description, desc);
+    new_trans.amount = amount;
+
+    return new_trans;
+}
 
 void add_transaction(transaction_node_t** head_ref, transaction_t new_transaction) {
         

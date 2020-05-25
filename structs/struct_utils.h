@@ -25,6 +25,14 @@ typedef struct __attribute__((packed)) budget_node_t {
 // ***** Function declarations for transaction nodes
 
 /**
+ * Create4 a transaction given some input data. This abstracts the production process
+ * @param desc A string describing the transaction
+ * @param amount The cost of the transaction
+ * @return A new transaction_t structure
+ */
+transaction_t create_transaction(const char* desc, float amount);
+
+/**
  * Add transaction to list
  * @param head The head of list to modify.
  * @param new_transaction The new item to add to the list.
