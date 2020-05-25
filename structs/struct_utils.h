@@ -10,20 +10,6 @@
 
 #include <structures.h>
 
-// ***** Node definitions for linked lists
-typedef struct __attribute__((packed)) transaction_node_t {
-    transaction_t transaction;
-    struct transaction_node_t* next;
-} transaction_node_t;
-
-typedef struct __attribute__((packed)) budget_node_t {
-    budget_t budget;
-    struct budget_node_t* next;
-} budget_node_t;
-
-
-// ***** Function declarations for transaction nodes
-
 /**
  * Create4 a transaction given some input data. This abstracts the production process
  * @param desc A string describing the transaction
